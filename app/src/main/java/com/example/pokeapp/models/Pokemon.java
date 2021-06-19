@@ -1,13 +1,17 @@
 package com.example.pokeapp.models;
 
-/**
- * Created by Daniel Alvarez on 28/7/16.
- * Copyright © 2016 Alvarez.tech. All rights reserved.
- */
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Pokemon {
 
+    @PrimaryKey
     private int number;
+    @ColumnInfo
     private String name;
+    @ColumnInfo
     private String url;
 
     public String getName() {

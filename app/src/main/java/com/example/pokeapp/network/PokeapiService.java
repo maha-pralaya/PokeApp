@@ -1,4 +1,8 @@
-package com.example.pokeapp.pokeapi;
+package com.example.pokeapp.network;
+
+import com.example.pokeapp.models.Pokemon;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -11,6 +15,6 @@ import retrofit2.http.Query;
 public interface PokeapiService {
 
     @GET("pokemon")
-    Call<com.example.pokeapp.models.PokemonRequest> obtenerListaPokemon(@Query("limit") int limit, @Query("offset") int offset);
+    Call<List<Pokemon>> obtenerListaPokemon();
 
 }

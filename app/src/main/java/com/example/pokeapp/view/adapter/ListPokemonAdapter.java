@@ -1,4 +1,4 @@
-package com.example.pokeapp;
+package com.example.pokeapp.view.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,17 +14,19 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import com.example.pokeapp.R;
 import com.example.pokeapp.models.Pokemon;
 
 public class ListPokemonAdapter extends RecyclerView.Adapter<ListPokemonAdapter.ViewHolder> {
 
-    private ArrayList<Pokemon> dataset;
-    private Context context;
+    private List<Pokemon> dataset;
+    Context context;
 
-    public ListPokemonAdapter(Context context) {
+    public ListPokemonAdapter(Context context, List<Pokemon> pokemons) {
+        dataset = pokemons;
         this.context = context;
-        dataset = new ArrayList<>();
     }
 
     @Override
@@ -49,11 +51,6 @@ public class ListPokemonAdapter extends RecyclerView.Adapter<ListPokemonAdapter.
     @Override
     public int getItemCount() {
         return dataset.size();
-    }
-
-    public void adicionarListaPokemon(ArrayList<Pokemon> listaPokemon) {
-        dataset.addAll(listaPokemon);
-        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
